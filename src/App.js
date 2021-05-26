@@ -10,9 +10,8 @@ function App() {
       <header className="App-header">
         <CounterDisplay></CounterDisplay>
         {counters.map((counter => {
-          return(<Counter name = {counter}></Counter>);
+          return(<Counter key = {counter} name = {counter}></Counter>);
         }))}
-        {/* <Counter></Counter> */}
       </header>
     </div>
   );

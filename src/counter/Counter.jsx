@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, resetCount } from '../redux/ducks/counter.js';
+import { useDispatch } from 'react-redux';
+import { increment, decrement } from '../redux/ducks/counter.js';
 import { Button } from '@material-ui/core';
 import './Counter.css';
 
@@ -26,13 +26,11 @@ const Counter = (props) => {
         const isPositive = internalCount >= 0;
         if (isPositive) {
             for (let i = 0; i < internalCount; i++) {
-                console.log("decrement");
                 dispatch(decrement());
             }
         } else { 
             for (let i = 0; i < Math.abs(internalCount); i++) {
                 dispatch(increment());
-                console.log("increment");
             }
         }
         setInternalCount(0);
