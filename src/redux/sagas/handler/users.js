@@ -1,8 +1,8 @@
 import {call, put} from 'redux-saga/effects';
-import setUsers from '../../ducks/users.js'
+import {setUsers} from '../../ducks/users.js'
 import requestGetUsers from '../request/users.js'
 
-export function* handleGetUsers(action){
+export function* handleGetUsers(){
     try {
         const response = yield call(requestGetUsers);
         const { data } = response;

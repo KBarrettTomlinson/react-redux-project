@@ -11,11 +11,13 @@ const User = () => {
     }, [dispatch]);
 
     const users = useSelector((state) => state.users.users);
-    console.log(users);
+    const {name, email} = users ? users[0] : {};
 
     return (
         <React.Fragment>
-            <h1>User Component</h1>
+            {users && (
+                <h1>Howdy {name}: {email}</h1>
+            )}
         </React.Fragment>
     );
 }

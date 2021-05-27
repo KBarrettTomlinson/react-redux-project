@@ -15,11 +15,9 @@ const initialState = {
 };
 
 const switchStatement = (state = initialState, action ) => {
-
-    console.log(action);
     switch (action.type) {
         case SET_USERS:
-            const users = action;
+            const {users} = action;
             return {...state, users: users};
         default:
             return state;
